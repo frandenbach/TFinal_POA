@@ -1,6 +1,8 @@
-public class Problema1 {
+package P1_Cronograma;
 
-    public static void solveP1(int[] l, int[] h) {
+public class CronogramaSolver {
+
+    public static void resolveCronograma(int[] l, int[] h) {
         int n = Math.max(l.length, h.length);
         int[] values = new int[n];
         int[] choices = new int[n];
@@ -13,7 +15,7 @@ public class Problema1 {
         }
 
         int maxValue = values[n - 1];
-        System.out.println("Valor máximo do plano: " + maxValue);
+        System.out.println("Valor máximo do plano: " + maxValue + "\n");
 
         for (int i = 0; i < n; i++) {
             if (i == 0) {
@@ -29,8 +31,9 @@ public class Problema1 {
             choices[i] = choice;
         }
 
+        System.out.println("\u001b[1;3mPlanejamento para as próximas semanas:\u001b[0m\n");
         for (int i = 0; i < n; i++) {
-            System.out.print("Semana " + (i + 1) + ": ");
+            System.out.print("• Semana " + (i + 1) + ": ");
             if (choices[i] == 1) {
                 System.out.println("Escolher alta dificuldade");
             } else if (choices[i] == 2) {
@@ -39,11 +42,5 @@ public class Problema1 {
                 System.out.println("Fazer nada");
             }
         }
-    }
-
-    public static void main(String[] args) {
-        int[] l = {10, 1, 10, 10};
-        int[] h = {5, 50, 5, 1};
-        solveP1(l, h);
     }
 }
