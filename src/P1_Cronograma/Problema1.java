@@ -1,8 +1,8 @@
 package P1_Cronograma;
 
-public class CronogramaSolver {
+public class Problema1 {
 
-    public static void resolveCronograma(int[] l, int[] h) {
+    public static void solveP1(int[] l, int[] h) {
         int n = Math.max(l.length, h.length);
         int[] values = new int[n];
         int[] choices = new int[n];
@@ -31,9 +31,9 @@ public class CronogramaSolver {
             choices[i] = choice;
         }
 
-        System.out.println("\u001b[1;3mPlanejamento para as próximas semanas:\u001b[0m\n");
+        System.out.print("\u001b[1;3mPlanejamento para as próximas semanas:\u001b[0m\n");
         for (int i = 0; i < n; i++) {
-            System.out.print("• Semana " + (i + 1) + ": ");
+            System.out.print("Semana " + (i + 1) + ": ");
             if (choices[i] == 1) {
                 System.out.println("Escolher alta dificuldade");
             } else if (choices[i] == 2) {
@@ -42,5 +42,20 @@ public class CronogramaSolver {
                 System.out.println("Fazer nada");
             }
         }
+    }
+
+    public static void main(String[] args) {
+        int[] l = {10, 1, 10, 10};
+        int[] h = {5, 50, 5, 1};
+
+        System.out.println("\n>>>>>>> RESULTADO CRONOGRAMA <<<<<<<\n");
+        double startTime = System.currentTimeMillis();
+
+        solveP1(l, h);
+
+        double endTime = System.currentTimeMillis();
+        double executeTime = (endTime - startTime) / 1000.0;
+
+        System.out.println("\nTempo de Execução: " + executeTime + " segundos\n");
     }
 }
