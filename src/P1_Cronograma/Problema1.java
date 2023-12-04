@@ -15,7 +15,7 @@ public class Problema1 {
         }
 
         int maxValue = values[n - 1];
-        System.out.println("Valor máximo do plano: " + maxValue + "\n");
+        System.out.println("\n>>>>>>> RESULTADO CRONOGRAMA <<<<<<<\n\nValor máximo do plano: " + maxValue + "\n");
 
         for (int i = 0; i < n; i++) {
             if (i == 0) {
@@ -47,8 +47,7 @@ public class Problema1 {
     public static void main(String[] args) {
         int[] l = {10, 1, 10, 10};
         int[] h = {5, 50, 5, 1};
-
-        System.out.println("\n>>>>>>> RESULTADO CRONOGRAMA <<<<<<<\n");
+        
         double startTime = System.currentTimeMillis();
 
         solveP1(l, h);
